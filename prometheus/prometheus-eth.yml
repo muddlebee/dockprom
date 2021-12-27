@@ -4,15 +4,26 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-    monitor: 'nimbus-monitor'
+    monitor: 'lighthouse-monitor'
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
-  - job_name: 'nimbus_node_exporter'
+  - job_name: 'lighthouse_node_exporter'
     static_configs:
       - targets: ['localhost:9100']
   - job_name: 'nodes'
     metrics_path: /metrics
     static_configs:
-      - targets: ['localhost:8008']
+      - targets: ['localhost:5054']
+  - job_name: 'validators'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:5064']
+  - job_name: 'geth'
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /debug/metrics/prometheus
+      scheme: http
+      static_configs:
+        - targets: [ 'localhost:6060' ]
