@@ -20,9 +20,8 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
       - targets: ['localhost:5064']
-  - job_name: 'geth'
-      scrape_timeout: 10s
-      metrics_path: /debug/metrics/prometheus
-      scheme: http
-      static_configs:
-        - targets: [ 'localhost:6060' ]
+#  - job_name: 'geth'
+#      metrics_path: /debug/metrics/prometheus
+#      scheme: http
+#      static_configs:
+#        - targets: [ 'localhost:6060' ]
