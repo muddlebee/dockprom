@@ -57,8 +57,8 @@ services:
     container_name: grafana
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/ethereum/dashboards/consensus-client/lighthouse:/etc/grafana/provisioning/dashboards
-      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/ethereum/consensus-client/lighthouse/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/ethereum/consensus-client/lighthouse/datasources:/etc/grafana/provisioning/datasources
     restart: unless-stopped
     expose:
       - 3000
