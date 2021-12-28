@@ -19,7 +19,14 @@ ADMIN_USER=admin ADMIN_PASSWORD=admin ADMIN_PASSWORD_HASH=JDJhJDE0JE91S1FrN0Z0VE
 ## Start
 
 ```run
-docker-compose -f docker-compose-monitor.yml up
+docker-compose -f docker-compose-lighthouse-monitor.yml up
+```
+
+
+## Stop
+
+```run
+docker-compose -f docker-compose-lighthouse-monitor.yml down
 ```
 
 
